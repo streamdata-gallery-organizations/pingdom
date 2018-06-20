@@ -3,9 +3,9 @@ swagger: "2.0"
 x-collection-name: Pingdom
 x-complete: 0
 info:
-  title: Checks API Checks
-  description: Gets a list of all checks that are visible to you as a user or a customer
-    depending on the request context.
+  title: Summary API Get A Response Time / Uptime Average
+  description: Get the average time / uptime value for a specified check and time
+    period.
   version: 1.0.0
 host: api.pingdom.com
 basePath: /
@@ -16,13 +16,42 @@ produces:
 consumes:
 - application/json
 paths:
-  '/checks ':
-    ' get ':
-      summary: Checks
-      description: Gets a list of all checks that are visible to you as a user or
-        a customer depending on the request context.
-      operationId: getChecks
-      x-api-path-slug: checks-get
+  ? |2-
+
+        /api/{version}/summary.average/{checkid}
+  : ? |2-
+
+          get
+    : summary: Get A Response Time / Uptime Average
+      description: Get the average time / uptime value for a specified check and time
+        period.
+      operationId: get-a-response-time--uptime-average
+      x-api-path-slug: apiversionsummary-averagecheckid-get
+      parameters:
+      - in: query
+        name: bycountry
+        description: Split response times into country groups
+        type: <td>boolean</td>
+      - in: query
+        name: byprobe
+        description: Split response times into probe groups
+        type: <td>boolean</td>
+      - in: query
+        name: from
+        description: Start time of period
+        type: <td>integer</td>
+      - in: query
+        name: includeuptime
+        description: Include uptime information
+        type: <td>boolean</td>
+      - in: query
+        name: probes
+        description: Filter to only use results from a list of probes
+        type: <td>string</td>
+      - in: query
+        name: to
+        description: End time of period
+        type: <td>integer</td>
       responses:
         "":
           description: ""
@@ -45,10 +74,8 @@ paths:
           description: User is over Dropbox storage quota
         5xx:
           description: Server error
-        200:
-          description: OK
       tags:
-      - Checks
+      - Summary
 x-streamrank:
   polling_total_time_average: "0"
   polling_size_download_average: "0"

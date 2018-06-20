@@ -3,9 +3,8 @@ swagger: "2.0"
 x-collection-name: Pingdom
 x-complete: 0
 info:
-  title: Checks API Checks
-  description: Gets a list of all checks that are visible to you as a user or a customer
-    depending on the request context.
+  title: Reports API Get Email Report Subscription List
+  description: Returns a list of email report subscriptions.
   version: 1.0.0
 host: api.pingdom.com
 basePath: /
@@ -16,13 +15,16 @@ produces:
 consumes:
 - application/json
 paths:
-  '/checks ':
-    ' get ':
-      summary: Checks
-      description: Gets a list of all checks that are visible to you as a user or
-        a customer depending on the request context.
-      operationId: getChecks
-      x-api-path-slug: checks-get
+  ? |2-
+
+        /api/{version}/reports.email
+  : ? |2-
+
+          get
+    : summary: Get Email Report Subscription List
+      description: Returns a list of email report subscriptions.
+      operationId: get-email-report-subscription-list
+      x-api-path-slug: apiversionreports-email-get
       responses:
         "":
           description: ""
@@ -45,21 +47,19 @@ paths:
           description: User is over Dropbox storage quota
         5xx:
           description: Server error
-        200:
-          description: OK
       tags:
-      - Checks
+      - Reports
 x-streamrank:
-  polling_total_time_average: "0"
-  polling_size_download_average: "0"
-  streaming_total_time_average: "0"
-  streaming_size_download_average: "0"
-  change_yes: "0"
-  change_no: "0"
-  time_percentage: "0"
-  size_percentage: "0"
-  change_percentage: "200"
-  last_run: ~
-  days_run: "0"
-  minute_run: "0"
+  polling_total_time_average: 0
+  polling_size_download_average: 0
+  streaming_total_time_average: 0
+  streaming_size_download_average: 0
+  change_yes: 0
+  change_no: 0
+  time_percentage: 0
+  size_percentage: 0
+  change_percentage: 0
+  last_run: ""
+  days_run: 0
+  minute_run: 0
 ---
