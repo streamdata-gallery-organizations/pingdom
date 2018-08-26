@@ -7,495 +7,279 @@ image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdo
 x-kinRank: "7"
 x-alexaRank: "5876"
 tags: Pingdom
-created: "2018-06-25"
-modified: "2018-06-25"
+created: "2018-08-26"
+modified: "2018-08-26"
 url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apis.md
 specificationVersion: "0.14"
 apis:
-- name: Analysis API Get Root Cause Analysis Results List
-  x-api-slug: analysis-api
+- name: Analysis API - Get Root Cause Analysis Results List
+  x-api-slug: apiversionanalysischeckid-get
   description: Returns a list of the latest root cause analysis results for a specified
     check.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    :////
-        /api/{version}/analysis/{checkid}
-  tags: Analysis
+  baseURL: :///
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionanalysischeckid-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionanalysischeckid-get-openapi.md
-- name: Analysis API
-  x-api-slug: analysis-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: :///
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Checks API Checks
-  x-api-slug: checks-api
-  description: Gets a list of all checks that are visible to you as a user or a customer
-    depending on the request context.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: 'https://api.pingdom.com////checks '
-  tags: Checks
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/checks-get-openapi.md
-- name: Checks API Checks {checkId}
-  x-api-slug: checks-api
-  description: Gets info about a check, current SLA, last result and its status.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: 'https://api.pingdom.com////checks/{checkId} '
-  tags: Checks
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/checkscheckid-get-openapi.md
-- name: Checks API Checks {checkId}
-  x-api-slug: checks-api
+- name: Checks API - Update Check
+  x-api-slug: checkscheckid-put
   description: Updates a check.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: 'https://api.pingdom.com////checks/{checkId} '
-  tags: Checks
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/checkscheckid-put-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/checkscheckid-put-openapi.md
-- name: Checks API Checks {checkId}
-  x-api-slug: checks-api
+- name: Checks API - Delete Check
+  x-api-slug: checkscheckid-delete
   description: Deletes a check.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: 'https://api.pingdom.com////checks/{checkId} '
-  tags: Checks
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/checkscheckid-delete-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/checkscheckid-delete-openapi.md
-- name: Checks API Checks {checkId} Lastvalue
-  x-api-slug: checks-api
-  description: Gets the absolute last value of a specific check.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: 'https://api.pingdom.com////checks/{checkId}/lastvalue '
-  tags: Checks
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/checkscheckidlastvalue-get-openapi.md
-- name: Checks API Checks {checkId} Results {millisecondsUtc}?detail_level={detail_level}
-  x-api-slug: checks-api
-  description: Gets a specific check result by a numeric java timestamp.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com////checks/{checkId}/results/{millisecondsUtc}
-  tags: Checks
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/checkscheckidresultsmillisecondsutc-get-openapi.md
-- name: Checks API Checks {checkId} Results?mostrecent={mostrecent}&amp;detail_level={detail_level}
-  x-api-slug: checks-api
-  description: Gets the most recent check results.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com////checks/{checkId}/results
-  tags: Checks
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/checkscheckidresults-get-openapi.md
-- name: Checks API Checks {checkId} Results?fromUtc={fromUtc}&amp;toUtc={toUtc}&amp;detail_level={detail_level}
-  x-api-slug: checks-api
-  description: Gets check results between two dates.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com////checks/{checkId}/results
-  tags: Checks
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/checkscheckidresults-get-openapi.md
-- name: Checks API Get Check List
-  x-api-slug: checks-api
-  description: Returns a list overview of all checks.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/checks
-  tags: Checks
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionchecks-get-openapi.md
-- name: Checks API
-  x-api-slug: checks-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Credits API Get Credits List
-  x-api-slug: credits-api
+- name: Credits API - Get Credits List
+  x-api-slug: apiversioncredits-get
   description: Returns information about remaining checks, SMS credits and SMS auto-refill
     status.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/credits
-  tags: Credits
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversioncredits-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversioncredits-get-openapi.md
-- name: Credits API
-  x-api-slug: credits-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Probes API Get Probe Server List
-  x-api-slug: probes-api
+- name: Probes API - Get Probe Server List
+  x-api-slug: apiversionprobes-get
   description: Returns a list of all Pingdom probe servers for Uptime and Transaction
     checks.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/probes
-  tags: Proves
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionprobes-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionprobes-get-openapi.md
-- name: Probes API
-  x-api-slug: probes-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Reference API Get Reference
-  x-api-slug: reference-api
+- name: Reference API - Get Reference
+  x-api-slug: apiversionreference-get
   description: Get a reference of regions, timezones and date/time/number formats
     and their identifiers.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/reference
-  tags: Reerence
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionreference-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionreference-get-openapi.md
-- name: Reference API
-  x-api-slug: reference-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Reports API Get Email Report Subscription List
-  x-api-slug: reports-api
+- name: Reports API - Get Email Report Subscription List
+  x-api-slug: apiversionreports-email-get
   description: Returns a list of email report subscriptions.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/reports.email
-  tags: Reports
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionreports-email-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionreports-email-get-openapi.md
-- name: Reports API Get Public Report List
-  x-api-slug: reports-api
+- name: Reports API - Get Public Report List
+  x-api-slug: apiversionreports-public-get
   description: Returns a list of public (web-based) reports.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/reports.public
-  tags: Reports
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionreports-public-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionreports-public-get-openapi.md
-- name: Reports API Get Shared Reports (Banners) List
-  x-api-slug: reports-api
+- name: Reports API - Get Shared Reports (Banners) List
+  x-api-slug: apiversionreports-shared-get
   description: Returns a list of shared reports (banners).
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/reports.shared
-  tags: Reports
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionreports-shared-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionreports-shared-get-openapi.md
-- name: Reports API
-  x-api-slug: reports-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Results API Get Raw Check Results
-  x-api-slug: results-api
+- name: Results API - Get Raw Check Results
+  x-api-slug: apiversionresultscheckid-get
   description: Return a list of raw test results for a specified check
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/results/{checkid}
-  tags: Results
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionresultscheckid-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionresultscheckid-get-openapi.md
-- name: Results API
-  x-api-slug: results-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Servertime API Get Current Server Time
-  x-api-slug: servertime-api
+- name: Servertime API - Get Current Server Time
+  x-api-slug: apiversionservertime-get
   description: Get the current time of the API server.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/servertime
-  tags: Servertime
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionservertime-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionservertime-get-openapi.md
-- name: Servertime API
-  x-api-slug: servertime-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Settings API Get Account Settings
-  x-api-slug: settings-api
+- name: Settings API - Get Account Settings
+  x-api-slug: apiversionsettings-get
   description: Returns all account-specific settings.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/settings
-  tags: Settings
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsettings-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsettings-get-openapi.md
-- name: Settings API
-  x-api-slug: settings-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Single API Make A Single Test
-  x-api-slug: single-api
+- name: Single API - Make A Single Test
+  x-api-slug: apiversionsingle-get
   description: Performs a single test using a specified Pingdom probe against a specified
     target. Please note that this method is meant to be used sparingly, not to set
     up your own monitoring solution.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/single
-  tags: Single
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsingle-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsingle-get-openapi.md
-- name: Single API
-  x-api-slug: single-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Summary API Get A Response Time / Uptime Average
-  x-api-slug: summary-api
+- name: Summary API - Get A Response Time / Uptime Average
+  x-api-slug: apiversionsummary-averagecheckid-get
   description: Get the average time / uptime value for a specified check and time
     period.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/summary.average/{checkid}
-  tags: Summary
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsummary-averagecheckid-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsummary-averagecheckid-get-openapi.md
-- name: Summary API Get Response Time Averages For Each Hour Of The Day
-  x-api-slug: summary-api
+- name: Summary API - Get Response Time Averages For Each Hour Of The Day
+  x-api-slug: apiversionsummary-hoursofdaycheckid-get
   description: Returns the average response time for each hour of the day (0-23) for
     a specific check over a selected time period. I.e. it shows you what an average
     day looks like during that time period.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/summary.hoursofday/{checkid}
-  tags: Summary
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsummary-hoursofdaycheckid-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsummary-hoursofdaycheckid-get-openapi.md
-- name: Summary API Get List of Outages
-  x-api-slug: summary-api
+- name: Summary API - Get List of Outages
+  x-api-slug: apiversionsummary-outagecheckid-get
   description: Get a list of status changes for a specified check and time period.
     If order is speficied to descending, the list is ordered by newest first. (Default
     is ordered by oldest first.)
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/summary.outage/{checkid}
-  tags: Summary
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsummary-outagecheckid-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsummary-outagecheckid-get-openapi.md
-- name: Summary API Get Intervals of Average Response Time and Uptime During a Given
+- name: Summary API - Get Intervals of Average Response Time and Uptime During a Given
     Interval
-  x-api-slug: summary-api
+  x-api-slug: apiversionsummary-performancecheckid-get
   description: |-
     For a given interval in time, return a list of sub intervals with the given resolution. Useful for generating graphs. A sub interval may be a week,
          a day or an hour depending on the choosen resolution.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/summary.performance/{checkid}
-  tags: Summary
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsummary-performancecheckid-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsummary-performancecheckid-get-openapi.md
-- name: Summary API Get Active Probes For A Period
-  x-api-slug: summary-api
+- name: Summary API - Get Active Probes For A Period
+  x-api-slug: apiversionsummary-probescheckid-get
   description: Get a list of probes that performed tests for a specified check during
     a specified period.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/summary.probes/{checkid}
-  tags: Summary
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsummary-probescheckid-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversionsummary-probescheckid-get-openapi.md
-- name: Summary API
-  x-api-slug: summary-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
-- name: Traceroute API Make A Traceroute
-  x-api-slug: traceroute-api
+- name: Traceroute API - Make A Traceroute
+  x-api-slug: apiversiontraceroute-get
   description: Perform a traceroute to a specified target from a specified Pingdom
     probe.
   image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
   humanURL: http://www.pingdom.com
-  baseURL: |-
-    https://api.pingdom.com///
-        /api/{version}/traceroute
-  tags: Traceroute
+  baseURL: https://api.pingdom.com//
+  tags: Monitoring, Performance, SaaS, Technology, internet, Service API, Relative
+    Data, Relative StreamRank, Streams
   properties:
   - type: x-postman-collection
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversiontraceroute-get-postman.md
   - type: x-openapi-spec
     url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/apiversiontraceroute-get-openapi.md
-- name: Traceroute API
-  x-api-slug: traceroute-api
-  description: Monitor your websites availability and performance for free with Pingdom
-    and always be the first to know when your website is down. No installation required.
-  image: http://kinlane-productions.s3.amazonaws.com/screen-capture-api/456-pingdom.jpg
-  humanURL: http://www.pingdom.com
-  baseURL: https://api.pingdom.com//
-  tags: Pingdom
-  properties:
-  - type: x-openapi-spec
-    url: https://raw.githubusercontent.com/streamdata-gallery-organizations/pingdom/master/_listings/pingdom/openapi.md
 x-common:
+- type: x-api-gallery
+  url: http://pinboard.api.gallery.streamdata.io
+- type: x-api-stack
+  url: http://pingdom.stack.network
 - type: x-base
   url: https://api.pingdom.com
 - type: x-blog
