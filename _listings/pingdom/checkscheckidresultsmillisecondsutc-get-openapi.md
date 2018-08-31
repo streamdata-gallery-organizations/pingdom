@@ -3,11 +3,9 @@ swagger: "2.0"
 x-collection-name: Pingdom
 x-complete: 0
 info:
-  title: Checks API Checks {checkId} Results {millisecondsUtc}?detail_level={detail_level}
+  title: Checks API Get Checks Results
   description: Gets a specific check result by a numeric java timestamp.
   version: 1.0.0
-host: api.pingdom.com
-basePath: /
 schemes:
 - http
 produces:
@@ -15,9 +13,63 @@ produces:
 consumes:
 - application/json
 paths:
+  ? |2-
+
+        /api/{version}/analysis/{checkid}
+  : ? |2-
+
+          get
+    : summary: Get Root Cause Analysis Results List
+      description: Returns a list of the latest root cause analysis results for a
+        specified check.
+      operationId: get-root-cause-analysis-results-list
+      x-api-path-slug: apiversionanalysischeckid-get
+      parameters:
+      - in: query
+        name: from
+        description: Return only results with timestamp of first test greater or equal
+          to this value
+        type: <td>integer</td>
+      - in: query
+        name: limit
+        description: Limits the number of returned results to the specified quantity
+        type: <td>integer</td>
+      - in: query
+        name: offset
+        description: Offset for listing
+        type: <td>integer</td>
+      - in: query
+        name: to
+        description: Return only results with timestamp of first test less or equal
+          to this value
+        type: <td>integer</td>
+      responses:
+        "":
+          description: ""
+        400:
+          description: Bad input parameter
+        401:
+          description: Bad or expired token
+        403:
+          description: Bad OAuth request (wrong consumer key, bad nonce, expired timestamp
+        404:
+          description: File or folder not found at the specified path
+        405:
+          description: Request method not expected (generally should be GET or POST)
+        429:
+          description: Your app is making too many requests and is being rate limited
+        503:
+          description: If the response includes the Retry-After header, this means
+            your OAuth 1
+        507:
+          description: User is over Dropbox storage quota
+        5xx:
+          description: Server error
+      tags:
+      - Analysis
   '/checks ':
     ' get ':
-      summary: Checks
+      summary: Get Checks
       description: Gets a list of all checks that are visible to you as a user or
         a customer depending on the request context.
       operationId: getChecks
@@ -50,7 +102,7 @@ paths:
       - Checks
   '/checks/{checkId} ':
     ' get ':
-      summary: Checks {checkId}
+      summary: Get Check
       description: Gets info about a check, current SLA, last result and its status.
       operationId: getChecksCheck
       x-api-path-slug: checkscheckid-get
@@ -60,7 +112,7 @@ paths:
       tags:
       - Checks
     ' put ':
-      summary: Checks {checkId}
+      summary: Update Check
       description: Updates a check.
       operationId: putChecksCheck
       x-api-path-slug: checkscheckid-put
@@ -70,7 +122,7 @@ paths:
       tags:
       - Checks
     ' delete ':
-      summary: Checks {checkId}
+      summary: Delete Check
       description: Deletes a check.
       operationId: deleteChecksCheck
       x-api-path-slug: checkscheckid-delete
@@ -81,7 +133,7 @@ paths:
       - Checks
   '/checks/{checkId}/lastvalue ':
     ' get ':
-      summary: Checks {checkId} Lastvalue
+      summary: Get Checks Lastvalue
       description: Gets the absolute last value of a specific check.
       operationId: getChecksCheckLastvalue
       x-api-path-slug: checkscheckidlastvalue-get
@@ -92,7 +144,7 @@ paths:
       - Checks
   /checks/{checkId}/results/{millisecondsUtc}:
     ' get ':
-      summary: Checks {checkId} Results {millisecondsUtc}?detail_level={detail_level}
+      summary: Get Checks Results
       description: Gets a specific check result by a numeric java timestamp.
       operationId: getChecksCheckResultsMillisecondsutcDetailLevelDetailLevel
       x-api-path-slug: checkscheckidresultsmillisecondsutc-get
@@ -101,6 +153,8 @@ paths:
           description: OK
       tags:
       - Checks
+host: api.pingdom.com
+basePath: /
 x-streamrank:
   polling_total_time_average: "0"
   polling_size_download_average: "0"
